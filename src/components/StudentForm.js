@@ -94,18 +94,18 @@ const StudentForm = ({ isEdit = false }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8 animate-slide-in">
-      <div className="container-md glass-card p-8 cyber-border">
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="container-md bg-white p-8 rounded-lg shadow-lg">
         <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
           <button
             onClick={handleCancel}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors glow-blue"
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
           >
             <ChevronLeft size={20} />
-            ◀️ RETURN TO DATABASE
+            Back to Students
           </button>
-          <h1 className="text-3xl font-bold text-gray-800 neon-cyan animate-matrix-glow text-center">
-            {isEdit ? '🔧 MODIFY ENTITY' : '🆕 CREATE NEW ENTITY'}
+          <h1 className="text-3xl font-bold text-gray-800 text-center">
+            {isEdit ? 'Edit Student' : 'Add New Student'}
           </h1>
           <div className="w-32"></div>
         </div>
@@ -114,62 +114,62 @@ const StudentForm = ({ isEdit = false }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-blue">
-                👤 ENTITY NAME <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Full Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="🔤 Enter entity designation..."
+                placeholder="Enter student's full name"
                 className={`form-input ${
-                  errors.name ? 'border-red-500' : 'cyber-border'
+                  errors.name ? 'border-red-500' : ''
                 }`}
               />
-              {errors.name && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.name}</p>}
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-green">
-                📧 NEURAL LINK <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Email Address <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder="📡 Enter communication channel..."
+                placeholder="Enter email address"
                 className={`form-input ${
-                  errors.email ? 'border-red-500' : 'cyber-border'
+                  errors.email ? 'border-red-500' : ''
                 }`}
               />
-              {errors.email && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.email}</p>}
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-purple">
-                📱 SIGNAL FREQUENCY <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Phone Number <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="📞 Enter transmission code..."
+                placeholder="Enter phone number"
                 className={`form-input ${
-                  errors.phone ? 'border-red-500' : 'cyber-border'
+                  errors.phone ? 'border-red-500' : ''
                 }`}
               />
-              {errors.phone && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.phone}</p>}
+              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
             </div>
 
             {/* Date of Birth */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-cyan">
-                🎂 INITIALIZATION DATE <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Date of Birth <span className="text-red-500">*</span>
               </label>
               <input
                 type="date"
@@ -177,16 +177,16 @@ const StudentForm = ({ isEdit = false }) => {
                 value={formData.dob}
                 onChange={handleInputChange}
                 className={`form-input ${
-                  errors.dob ? 'border-red-500' : 'cyber-border'
+                  errors.dob ? 'border-red-500' : ''
                 }`}
               />
-              {errors.dob && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.dob}</p>}
+              {errors.dob && <p className="text-red-500 text-sm mt-1">{errors.dob}</p>}
             </div>
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-pink">
-                🔐 SECURITY KEY <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Password <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <input
@@ -194,20 +194,20 @@ const StudentForm = ({ isEdit = false }) => {
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  placeholder="🔑 Enter encryption key..."
+                  placeholder="Enter password"
                   className={`form-input pr-12 ${
-                    errors.password ? 'border-red-500' : 'cyber-border'
+                    errors.password ? 'border-red-500' : ''
                   }`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(prev => ({ ...prev, form: !prev.form }))}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-blue-400 hover:text-cyan-400 glow-blue"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600"
                 >
                   {showPassword.form ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
-              {errors.password && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.password}</p>}
+              {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
             </div>
 
             {/* Confirm Password */}
@@ -239,35 +239,35 @@ const StudentForm = ({ isEdit = false }) => {
 
             {/* Language */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-green">
-                🌐 NEURAL PROTOCOL <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Programming Language <span className="text-red-500">*</span>
               </label>
               <select
                 name="language"
                 value={formData.language}
                 onChange={handleInputChange}
                 className={`form-select ${
-                  errors.language ? 'border-red-500' : 'cyber-border'
+                  errors.language ? 'border-red-500' : ''
                 }`}
               >
-                <option value="">-- SELECT PROTOCOL --</option>
-                <option value="Tamil">🇮🇳 TAMIL</option>
-                <option value="English">🇺🇸 ENGLISH</option>
-                <option value="Spanish">🇪🇸 SPANISH</option>
-                <option value="French">🇫🇷 FRENCH</option>
-                <option value="German">🇩🇪 GERMAN</option>
-                <option value="Hindi">🇮🇳 HINDI</option>
+                <option value="">Select Language</option>
+                <option value="Tamil">Tamil</option>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Hindi">Hindi</option>
               </select>
-              {errors.language && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.language}</p>}
+              {errors.language && <p className="text-red-500 text-sm mt-1">{errors.language}</p>}
             </div>
 
             {/* Gender */}
             <div>
-              <label className="block text-sm font-semibold mb-2 neon-purple">
-                ⚧ ENTITY TYPE <span className="text-red-500 neon-pink">*</span>
+              <label className="block text-sm font-semibold mb-2 text-gray-700">
+                Gender <span className="text-red-500">*</span>
               </label>
               <div className="flex gap-6 pt-3 flex-wrap">
-                <label className="flex items-center gap-2 cursor-pointer hover:text-blue-400 transition-colors">
+                <label className="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors">
                   <input
                     type="radio"
                     name="gender"
@@ -276,32 +276,32 @@ const StudentForm = ({ isEdit = false }) => {
                     onChange={handleInputChange}
                     className="w-4 h-4 text-blue-600"
                   />
-                  <span className="neon-blue">👨 MALE</span>
+                  <span>Male</span>
                 </label>
-                <label className="flex items-center gap-2 cursor-pointer hover:text-pink-400 transition-colors">
+                <label className="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors">
                   <input
                     type="radio"
                     name="gender"
                     value="Female"
                     checked={formData.gender === 'Female'}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-pink-600"
+                    className="w-4 h-4 text-blue-600"
                   />
-                  <span className="neon-pink">👩 FEMALE</span>
+                  <span>Female</span>
                 </label>
-                <label className="flex items-center gap-2 cursor-pointer hover:text-purple-400 transition-colors">
+                <label className="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors">
                   <input
                     type="radio"
                     name="gender"
                     value="Others"
                     checked={formData.gender === 'Others'}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-purple-600"
+                    className="w-4 h-4 text-blue-600"
                   />
-                  <span className="neon-purple">🌟 OTHER</span>
+                  <span>Other</span>
                 </label>
               </div>
-              {errors.gender && <p className="text-red-500 text-sm mt-1 neon-pink">⚠️ {errors.gender}</p>}
+              {errors.gender && <p className="text-red-500 text-sm mt-1">{errors.gender}</p>}
             </div>
           </div>
 
@@ -310,17 +310,17 @@ const StudentForm = ({ isEdit = false }) => {
             <button
               type="button"
               onClick={handleCancel}
-              className="flex items-center gap-2 px-8 py-4 border cyber-border text-gray-700 rounded-lg hover:bg-gray-100 transition-colors font-medium glow-red"
+              className="flex items-center gap-2 px-8 py-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors font-medium"
             >
               <X size={18} />
-              ❌ ABORT OPERATION
+              Cancel
             </button>
             <button
               type="submit"
-              className="flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium glow-blue cyber-border"
+              className="flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
               <Save size={18} />
-              {isEdit ? '💾 SAVE MODIFICATIONS' : '✨ CREATE ENTITY'}
+              {isEdit ? 'Save Changes' : 'Add Student'}
             </button>
           </div>
         </form>
