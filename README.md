@@ -1,12 +1,34 @@
-# Getting Started with Create React App
+# Student Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based student management application with multi-page navigation, CRUD operations, and state management using React Context.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dashboard**: Overview of student statistics and quick actions
+- **Students List**: View, search, filter, and manage all students
+- **Add Student**: Create new student records with validation
+- **Edit Student**: Update existing student information
+- **Multi-selection**: Select and delete multiple students
+- **Search & Filter**: Find students quickly
+- **Pagination**: Navigate through large lists of students
+- **Responsive Design**: Works on desktop and mobile devices
 
-### `npm start`
+## Technologies Used
+
+- React 18
+- React Router DOM (for navigation)
+- React Context API (for state management)
+- Tailwind CSS (for styling)
+- Lucide React (for icons)
+
+## Installation & Setup
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
