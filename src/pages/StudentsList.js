@@ -10,8 +10,12 @@ import {
   ChevronsRight, 
   Search, 
   Filter,
-  UserPlus
+  UserPlus,
+  Download,
+  FileText,
+  Table
 } from 'lucide-react';
+import { generateStudentsPDF, generateExcelData, generateStudentDetailsPDF } from '../utils/pdfGenerator';
 
 const StudentsList = () => {
   const navigate = useNavigate();
@@ -63,70 +67,110 @@ const StudentsList = () => {
     }
   };
 
+  const handleDownloadPDF = () => {
+    generateStudentsPDF(filteredStudents, 'Students Report');
+  };
+
+  const handleDownloadSelectedPDF = () => {
+    const selectedStudents = filteredStudents.filter(student => selectedIds.includes(student.id));
+    if (selectedStudents.length > 0) {
+      generateStudentsPDF(selectedStudents, 'Selected Students Report');
+    }
+  };
+
+  const handleDownloadExcel = () => {
+    generateExcelData(filteredStudents);
+  };
+
+  const handleDownloadStudentPDF = (student) => {
+    generateStudentDetailsPDF(student);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-50 p-8 animate-slide-in">
+      <div className="container">
         {/* Header Actions */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="flex justify-between items-center">
-            <div className="flex gap-3">
+        <div className="glass-card p-6 mb-6 cyber-border">
+          <div className="flex justify-between items-center flex-wrap gap-4">
+            <div className="flex gap-3 flex-wrap">
               <button
                 onClick={() => navigate('/add-student')}
-                className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
+                className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium glow-green"
               >
                 <UserPlus size={18} />
-                New Student
+                ➕ New Student
               </button>
               <button
                 onClick={handleDeleteSelected}
                 disabled={selectedIds.length === 0}
-                className="flex items-center gap-2 bg-red-400 text-white px-6 py-3 rounded-lg hover:bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+                className="flex items-center gap-2 bg-red-400 text-white px-6 py-3 rounded-lg hover:bg-red-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium glow-red"
               >
                 <Trash2 size={18} />
-                Delete Selected ({selectedIds.length})
+                🗑️ Delete Selected ({selectedIds.length})
               </button>
+              {selectedIds.length > 0 && (
+                <button
+                  onClick={handleDownloadSelectedPDF}
+                  className="flex items-center gap-2 pdf-download-btn"
+                >
+                  <FileText size={18} />
+                  📄 Download Selected PDF
+                </button>
+              )}
             </div>
             <div className="flex gap-3">
-              <button className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center hover:bg-yellow-500 transition-colors">
-                📄
+              <button 
+                onClick={handleDownloadPDF}
+                className="pdf-download-btn"
+                title="Download All Students as PDF"
+              >
+                <Download size={18} />
+                📄 PDF Report
               </button>
-              <button className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
-                📄
+              <button 
+                onClick={handleDownloadExcel}
+                className="excel-download-btn"
+                title="Download as CSV"
+              >
+                <Table size={18} />
+                � CSV Export
               </button>
             </div>
           </div>
         </div>
 
         {/* Students Table */}
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-bold text-gray-700">Students List</h2>
-            <div className="flex gap-3">
+        <div className="glass-card p-6 holographic">
+          <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
+            <h2 className="text-3xl font-bold text-gray-700 neon-cyan animate-matrix-glow">
+              🤖 Students Database
+            </h2>
+            <div className="flex gap-3 flex-wrap">
               <button 
                 onClick={() => setSearchTerm('')}
-                className="flex items-center gap-2 border border-blue-500 text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"
+                className="flex items-center gap-2 border border-blue-500 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors glow-blue"
               >
                 <Filter size={18} />
-                Clear
+                🔄 Clear Filter
               </button>
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Keyword Search"
+                  placeholder="🔍 Search students..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none w-64"
+                  className="form-input pl-10 pr-4 py-2 w-64"
                 />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400" size={18} />
               </div>
             </div>
           </div>
 
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="table w-full">
               <thead>
-                <tr className="bg-gray-50 border-b">
+                <tr>
                   <th className="p-3 text-left">
                     <input
                       type="checkbox"
@@ -135,13 +179,13 @@ const StudentsList = () => {
                       className="w-4 h-4 cursor-pointer"
                     />
                   </th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">Name</th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">E-mail</th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">Phone</th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">Language</th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">Gender</th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">Date of Birth</th>
-                  <th className="p-3 text-left text-sm font-semibold text-gray-700">Actions</th>
+                  <th className="p-3 text-left text-sm font-semibold neon-blue">👤 Name</th>
+                  <th className="p-3 text-left text-sm font-semibold neon-green">📧 E-mail</th>
+                  <th className="p-3 text-left text-sm font-semibold neon-purple">📱 Phone</th>
+                  <th className="p-3 text-left text-sm font-semibold neon-cyan">🌐 Language</th>
+                  <th className="p-3 text-left text-sm font-semibold neon-pink">⚧ Gender</th>
+                  <th className="p-3 text-left text-sm font-semibold neon-blue">🎂 Date of Birth</th>
+                  <th className="p-3 text-left text-sm font-semibold text-gray-700">⚡ Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -174,14 +218,21 @@ const StudentsList = () => {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleEdit(student)}
-                            className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition-colors"
+                            className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition-colors glow-blue"
                             title="Edit Student"
                           >
                             <Edit2 size={16} />
                           </button>
                           <button
+                            onClick={() => handleDownloadStudentPDF(student)}
+                            className="w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center hover:bg-purple-600 transition-colors glow-blue"
+                            title="Download PDF"
+                          >
+                            <Download size={16} />
+                          </button>
+                          <button
                             onClick={() => handleDelete(student.id)}
-                            className="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors"
+                            className="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors glow-red"
                             title="Delete Student"
                           >
                             <Trash2 size={16} />
@@ -192,8 +243,8 @@ const StudentsList = () => {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="8" className="p-8 text-center text-gray-500">
-                      No students found
+                    <td colSpan="8" className="p-8 text-center text-gray-500 neon-purple">
+                      🤖 No students found in the database
                     </td>
                   </tr>
                 )}

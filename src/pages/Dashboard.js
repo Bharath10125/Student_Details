@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useStudentContext } from '../context/StudentContext';
-import { Users, UserPlus, GraduationCap, Calendar } from 'lucide-react';
+import { Users, UserPlus, GraduationCap, Calendar, Download, FileBarChart } from 'lucide-react';
+import { generateDashboardPDF, generateStudentsPDF } from '../utils/pdfGenerator';
 
 const Dashboard = () => {
   const { students } = useStudentContext();
@@ -15,12 +16,41 @@ const Dashboard = () => {
 
   const recentStudents = students.slice(-5);
 
+  const handleDashboardPDF = () => {
+    generateDashboardPDF('dashboard-content', 'Dashboard Report');
+  };
+
+  const handleStudentsReportPDF = () => {
+    generateStudentsPDF(students, 'Complete Students Report');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 p-8 animate-slide-in">
       <div className="container">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 neon-blue">
-          ⚡ Dashboard Command Center
-        </h1>
+        <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
+          <h1 className="text-3xl font-bold text-gray-800 neon-cyan animate-matrix-glow">
+            🚀 Neural Dashboard Command Center
+          </h1>
+          <div className="flex gap-3">
+            <button
+              onClick={handleDashboardPDF}
+              className="pdf-download-btn"
+              title="Download Dashboard as PDF"
+            >
+              <FileBarChart size={18} />
+              📊 Dashboard PDF
+            </button>
+            <button
+              onClick={handleStudentsReportPDF}
+              className="excel-download-btn"
+              title="Download Complete Report"
+            >
+              <Download size={18} />
+              📋 Full Report
+            </button>
+          </div>
+        </div>
+        <div id="dashboard-content">
         
         {/* Stats Cards */}
                 <div className="grid grid-cols-1 grid-cols-2 grid-cols-4 gap-6 mb-8">
@@ -123,6 +153,7 @@ const Dashboard = () => {
               );
             })}
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -9,27 +9,27 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="container flex justify-between items-center">
-        <h1 className="text-2xl font-bold neon-blue animate-pulse-glow">
-          🚀 Student Management System
+        <h1 className="text-2xl font-bold neon-cyan animate-matrix-glow">
+          🤖 NEURAL STUDENT MATRIX
         </h1>
         <div className="flex space-x-6">
           <Link
             to="/"
             className={`nav-link ${isActive('/') ? 'active' : ''}`}
           >
-            🏠 Dashboard
+            ⚡ COMMAND CENTER
           </Link>
           <Link
             to="/students"
             className={`nav-link ${isActive('/students') ? 'active' : ''}`}
           >
-            👥 Students List
+            �️ DATABASE
           </Link>
           <Link
             to="/add-student"
             className={`nav-link ${isActive('/add-student') ? 'active' : ''}`}
           >
-            ➕ Add Student
+            🆕 NEW ENTITY
           </Link>
         </div>
       </div>
