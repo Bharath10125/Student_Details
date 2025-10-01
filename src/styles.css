@@ -9,8 +9,13 @@ body {
   font-family: 'Georgia', 'Times New Roman', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
   color: #e0e0e0;
+=======
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  color: #000000;
+>>>>>>> master
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -148,6 +153,7 @@ body {
 .mt-1 { margin-top: 0.25rem; }
 .mt-6 { margin-top: 1.5rem; }
 
+<<<<<<< HEAD
 /* Colors - Balanced Dark Theme with Shining Effects */
 .bg-white { 
   background: linear-gradient(135deg, #2d2d2d 0%, #404040 50%, #525252 100%);
@@ -165,6 +171,25 @@ body {
   background: linear-gradient(135deg, #333333 0%, #404040 50%, #4d4d4d 100%);
   border: 1px solid #666666;
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+=======
+/* Colors - Light Blue and White Theme */
+.bg-white { 
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e3f2fd 100%);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 
+              0 2px 8px rgba(33, 150, 243, 0.15),
+              inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.bg-gray-50 { 
+  background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+}
+
+.bg-gray-100 { 
+  background: linear-gradient(135deg, #f5f5f5 0%, #e3f2fd 50%, #bbdefb 100%);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+>>>>>>> master
 }
 
 .bg-blue-50 { 
@@ -199,6 +224,7 @@ body {
 }
 
 .bg-green-50 { 
+<<<<<<< HEAD
   background: linear-gradient(135deg, #2a2a2a 0%, #363636 50%, #424242 100%);
   border: 1px solid #555555;
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
@@ -262,6 +288,71 @@ body {
 .text-green-700 { color: #d0d0d0; }
 .text-red-500 { color: #c0c0c0; }
 .text-pink-800 { color: #d0d0d0; }
+=======
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 50%, #a5d6a7 100%);
+  border: 1px solid #81c784;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+}
+
+.bg-green-100 { 
+  background: linear-gradient(135deg, #c8e6c8 0%, #a5d6a7 50%, #81c784 100%);
+}
+
+.bg-green-600 { 
+  background: linear-gradient(135deg, #43a047 0%, #388e3c 50%, #2e7d32 100%);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25);
+}
+
+.bg-green-700 { 
+  background: linear-gradient(135deg, #388e3c 0%, #2e7d32 50%, #1b5e20 100%);
+}
+
+.bg-red-400 { 
+  background: linear-gradient(135deg, #ef5350 0%, #f44336 50%, #e53935 100%);
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.2);
+}
+
+.bg-red-500 { 
+  background: linear-gradient(135deg, #f44336 0%, #e53935 50%, #d32f2f 100%);
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.25);
+}
+
+.bg-red-600 { 
+  background: linear-gradient(135deg, #e53935 0%, #d32f2f 50%, #c62828 100%);
+}
+
+.bg-yellow-400 { 
+  background: linear-gradient(135deg, #ffeb3b 0%, #fdd835 50%, #fbc02d 100%);
+  box-shadow: 0 4px 8px rgba(255, 235, 59, 0.2);
+}
+
+.bg-yellow-500 { 
+  background: linear-gradient(135deg, #fdd835 0%, #fbc02d 50%, #f9a825 100%);
+}
+
+.bg-pink-100 { 
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+}
+
+.bg-purple-500 { 
+  background: linear-gradient(135deg, #9c27b0 0%, #8e24aa 50%, #7b1fa2 100%);
+  box-shadow: 0 4px 8px rgba(156, 39, 176, 0.2);
+}
+
+/* Text Colors for Light Theme */
+.text-white { color: #000000; }
+.text-gray-400 { color: #424242; }
+.text-gray-500 { color: #212121; }
+.text-gray-600 { color: #000000; }
+.text-gray-700 { color: #000000; }
+.text-gray-800 { color: #000000; }
+.text-blue-600 { color: #1976d2; }
+.text-blue-700 { color: #1565c0; }
+.text-blue-800 { color: #0d47a1; }
+.text-green-700 { color: #388e3c; }
+.text-red-500 { color: #f44336; }
+.text-pink-800 { color: #ad1457; }
+>>>>>>> master
 
 ::-webkit-scrollbar-track {
   background: #2d2d2d;
@@ -789,6 +880,7 @@ body {
 .space-x-6 > * + * { margin-left: 1.5rem; }
 
 /* Navigation */
+<<<<<<< HEAD
 /* Navigation with Enhanced Shining */
 .navigation {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
@@ -797,12 +889,26 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 
               0 2px 6px rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid #555555;
+=======
+/* Navigation with Light Blue Theme */
+.navigation {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  color: #000000;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2), 
+              0 2px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #64b5f6;
+>>>>>>> master
 }
 
 .nav-link {
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
+<<<<<<< HEAD
   color: #ffffff;
+=======
+  color: #000000;
+>>>>>>> master
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
@@ -810,6 +916,7 @@ body {
 }
 
 .nav-link:hover {
+<<<<<<< HEAD
   background: linear-gradient(135deg, #525252 0%, #666666 50%, #7a7a7a 100%);
   color: white;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 
@@ -841,10 +948,45 @@ body {
 
 .form-input::placeholder {
   color: #999999;
+=======
+  background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #2196f3 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3), 
+              0 2px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border: 1px solid #1976d2;
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #42a5f5 0%, #2196f3 50%, #1976d2 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4), 
+              inset 0 1px 3px rgba(255, 255, 255, 0.3);
+  border: 1px solid #1565c0;
+}
+
+/* Enhanced Form Styles with Light Blue Theme */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #90caf9;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #000000;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(33, 150, 243, 0.1), 
+              0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-input::placeholder {
+  color: #666666;
+>>>>>>> master
 }
 
 .form-input:focus {
   outline: none;
+<<<<<<< HEAD
   border-color: #888888;
   background: linear-gradient(135deg, #383838 0%, #424242 100%);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 
@@ -854,11 +996,23 @@ body {
 .form-input.error {
   border-color: #999999;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+=======
+  border-color: #42a5f5;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2), 
+              inset 0 1px 3px rgba(33, 150, 243, 0.1);
+}
+
+.form-input.error {
+  border-color: #f44336;
+  box-shadow: 0 0 8px rgba(244, 67, 54, 0.2);
+>>>>>>> master
 }
 
 .form-select {
   width: 100%;
   padding: 0.75rem 1rem;
+<<<<<<< HEAD
   border: 1px solid #555555;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -868,10 +1022,22 @@ body {
   transition: all 0.3s ease;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 
               0 1px 2px rgba(255, 255, 255, 0.1);
+=======
+  border: 1px solid #90caf9;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(33, 150, 243, 0.1), 
+              0 1px 2px rgba(0, 0, 0, 0.1);
+>>>>>>> master
 }
 
 .form-select:focus {
   outline: none;
+<<<<<<< HEAD
   border-color: #888888;
   background: linear-gradient(135deg, #383838 0%, #424242 100%);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 
@@ -888,12 +1054,31 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 
               0 2px 8px rgba(255, 255, 255, 0.1);
   border: 1px solid #555555;
+=======
+  border-color: #42a5f5;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2), 
+              inset 0 1px 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Enhanced Table Styles with Light Blue Theme */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.2), 
+              0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+>>>>>>> master
 }
 
 .table th,
 .table td {
   padding: 1rem 0.75rem;
   text-align: left;
+<<<<<<< HEAD
   border-bottom: 1px solid #444444;
 }
 
@@ -906,6 +1091,20 @@ body {
   letter-spacing: 0.05em;
   border-bottom: 2px solid #777777;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+=======
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+  background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #2196f3 100%);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #1976d2;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+>>>>>>> master
 }
 
 .table tbody tr {
@@ -913,6 +1112,7 @@ body {
 }
 
 .table tbody tr:hover {
+<<<<<<< HEAD
   background: linear-gradient(135deg, #383838 0%, #424242 50%, #4d4d4d 100%);
   transform: scale(1.01);
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
@@ -930,6 +1130,25 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 
               0 2px 8px rgba(255, 255, 255, 0.15),
               inset 0 1px 3px rgba(255, 255, 255, 0.2);
+=======
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
+}
+
+.table td {
+  color: #000000;
+}
+
+/* Shining Cards with Light Blue Theme */
+.classic-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e3f2fd 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.15), 
+              0 2px 8px rgba(0, 0, 0, 0.1),
+              inset 0 1px 3px rgba(255, 255, 255, 0.8);
+>>>>>>> master
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -942,7 +1161,11 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
+<<<<<<< HEAD
   background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+=======
+  background: linear-gradient(45deg, transparent, rgba(33, 150, 243, 0.1), transparent);
+>>>>>>> master
   transform: rotate(45deg);
   transition: all 0.6s ease;
   opacity: 0;
@@ -1015,14 +1238,25 @@ body {
   animation: fadeIn 0.3s ease-out;
 }
 
+<<<<<<< HEAD
 /* Enhanced Button Styles with Shining Effects */
+=======
+/* Enhanced Button Styles with Light Blue Theme */
+>>>>>>> master
 button {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #404040 0%, #525252 50%, #666666 100%);
   border: 1px solid #777777;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 
+=======
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 50%, #1565c0 100%);
+  border: 1px solid #1976d2;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3), 
+>>>>>>> master
               inset 0 1px 2px rgba(255, 255, 255, 0.2);
 }
 
@@ -1039,8 +1273,14 @@ button::before {
 
 button:hover {
   transform: translateY(-2px);
+<<<<<<< HEAD
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 
               0 3px 10px rgba(255, 255, 255, 0.3);
+=======
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 50%, #0d47a1 100%);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4), 
+              0 3px 10px rgba(255, 255, 255, 0.2);
+>>>>>>> master
 }
 
 button:hover::before {
@@ -1211,14 +1451,25 @@ button:active {
   animation: fadeIn 0.3s ease-out;
 }
 
+<<<<<<< HEAD
 /* Enhanced Button Styles with Shining Effects */
+=======
+/* Enhanced Button Styles with Light Blue Theme */
+>>>>>>> master
 button {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #404040 0%, #525252 50%, #666666 100%);
   border: 1px solid #777777;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+=======
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 50%, #1565c0 100%);
+  border: 1px solid #1976d2;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+>>>>>>> master
 }
 
 button::before {
@@ -1234,7 +1485,12 @@ button::before {
 
 button:hover {
   transform: translateY(-2px);
+<<<<<<< HEAD
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 3px 10px rgba(255, 255, 255, 0.3);
+=======
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 50%, #0d47a1 100%);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4), 0 3px 10px rgba(255, 255, 255, 0.2);
+>>>>>>> master
 }
 
 button:hover::before {
